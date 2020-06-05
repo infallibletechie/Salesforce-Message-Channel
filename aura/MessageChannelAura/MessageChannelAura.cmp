@@ -1,0 +1,18 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    
+    <aura:attribute type="String" name="ReceivedMessage"/>
+    
+    <lightning:messageChannel onMessage="{!c.onMessageReceive}" 
+                              scope="APPLICATION" 
+                              type="SampleChannel__c"
+                              aura:id="sampleMessageChannel"/>
+    
+    <div class="slds-box slds-theme--default">
+        
+        <lightning:button label="Publish" onclick="{! c.publish }"/><br/><br/>
+            
+    	Message Received is {! v.ReceivedMessage }
+            
+    </div>
+
+</aura:component>
